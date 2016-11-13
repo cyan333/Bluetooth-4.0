@@ -17,8 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.bluetoothmanager = [[BLE alloc] init];
-    [self.bluetoothmanager controlSetup];
+//    self.bluetoothmanager = [[BLE alloc] init];
+//    [self.bluetoothmanager controlSetup];
+    
+    self.bluetoothmanager = [[BLEsdk alloc] init];
+    [self.bluetoothmanager initBluetoothService];
     
     _toggle = 0;
     
