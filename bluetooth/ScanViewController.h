@@ -17,6 +17,8 @@
 @property(nonatomic, strong) BLEsdk *bluetoothmanager;
 @property(nonatomic, assign) int toggle;
 @property(nonatomic, strong) NSMutableArray *deviceSearchResults;
+@property(nonatomic, strong) NSTimer *checkBLETimer;
+@property(nonatomic, assign) int timeoutCounter;
 
 @property (strong, nonatomic) IBOutlet UIButton *scanBLEbtn;
 @property (strong, nonatomic) IBOutlet UITableView *BLEdevicesList;

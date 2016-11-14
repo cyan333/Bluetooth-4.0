@@ -78,8 +78,7 @@
         
         NSLog(@"Name : %@", p.name);
         NSLog(@"-------------------------------------");    }
-    
-    
+
 }
 
 - (void)centralManager:(CBCentralManager *)central
@@ -88,27 +87,36 @@
                   RSSI:(NSNumber *)RSSI
 {
     if (!self.peripherals)
+    {
         self.peripherals = [[NSMutableArray alloc] initWithObjects:peripheral,nil];
+        self.peripheralsNames = [[NSMutableArray alloc] initWithObjects:peripheral.name, nil];
+    }
     else
     {
-        for(int i = 0; i < self.peripherals.count; i++)
-        {
-            CBPeripheral *p = [self.peripherals objectAtIndex:i];
-            
-            if ((p.identifier == NULL) || (peripheral.identifier == NULL))
-                continue;
-            
-            if ([p.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString])
+        if (peripheral.name != nil) {
+            for(int i = 0; i < self.peripherals.count; i++)
             {
-                [self.peripherals replaceObjectAtIndex:i withObject:peripheral];
-                NSLog(@"Duplicate UUID found updating...");
-                return;
+                CBPeripheral *p = [self.peripherals objectAtIndex:i];
+                
+                if ((p.identifier == NULL) || (peripheral.identifier == NULL))
+                    continue;
+                
+                if ([p.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString])
+                {
+                    [self.peripherals replaceObjectAtIndex:i withObject:peripheral];
+                    [self.peripheralsNames replaceObjectAtIndex:i withObject:peripheral.name];
+                    
+                    NSLog(@"Duplicate UUID found updating...");
+                    return;
+                }
             }
+            
+            [self.peripherals addObject:peripheral];
+            [self.peripheralsNames addObject:peripheral.name];
+            
+            
+            NSLog(@"%@",[peripheral identifier]);
         }
-        
-        [self.peripherals addObject:peripheral];
-        
-        NSLog(@"%@",[peripheral identifier]);
     }
     
     //NSLog(@"didDiscoverPeripheral");

@@ -20,11 +20,12 @@
     self.scanBLEbtn.layer.cornerRadius = 6;
     
     //setup UI elements - teble view
-    self.deviceSearchResults = [[NSMutableArray alloc] initWithObjects:@"cat", @"dog", @"nfm", nil];
-    
+    self.deviceSearchResults = [[NSMutableArray alloc] init];
     self.BLEdevicesList.delegate = self;
     self.BLEdevicesList.dataSource = self;
     
+    self.checkBLETimer = [[NSTimer alloc] init];
+    self.timeoutCounter = 0;
     
     //setup bluetooth
     self.bluetoothmanager = [[BLEsdk alloc] init];
@@ -40,7 +41,7 @@
 #pragma mark - table view setup-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [self.deviceSearchResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,6 +63,20 @@
     return 50;
 }
 
+//updata table every 1s.
+- (void) updateTable
+{
+    self.timeoutCounter++;
+    if (self.timeoutCounter >= 12) {
+        [self.checkBLETimer invalidate];
+        self.checkBLETimer = [[NSTimer alloc] init];
+        self.timeoutCounter = 0;
+    }
+    self.deviceSearchResults = self.bluetoothmanager.peripheralsNames;
+    [self.BLEdevicesList reloadData];
+}
+
+
 
 #pragma mark - Btn setup -
 
@@ -74,8 +89,17 @@
 #pragma mark - Bluetooth connection -
 - (IBAction)scanbuttom {
     [self.bluetoothmanager findBLEPeripherals:10];
+    self.checkBLETimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                          target:self
+                                                        selector:@selector(updateTable)
+                                                        userInfo:nil
+                                                         repeats:YES];
+    
     NSLog(@"success");
 }
+
+
+
 
 - (IBAction)connectbluetooth {
 

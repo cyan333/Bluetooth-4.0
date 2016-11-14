@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) CBCentralManager *centralManager;
 @property (strong, nonatomic) NSMutableArray *peripherals;
+@property (strong, nonatomic) NSMutableArray *peripheralsNames;
 @property (strong, nonatomic) CBPeripheral *connectedPeripheral;
 
 
