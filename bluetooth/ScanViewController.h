@@ -10,11 +10,17 @@
 #import "BLE.h"
 #import "BLEsdk.h"
 
-@interface ScanViewController : UIViewController
+@interface ScanViewController : UIViewController <UITableViewDelegate , UITableViewDataSource>
+    
 
 //@property(nonatomic, strong) BLE *bluetoothmanager;
 @property(nonatomic, strong) BLEsdk *bluetoothmanager;
 @property(nonatomic, assign) int toggle;
+@property(nonatomic, strong) NSMutableArray *deviceSearchResults;
+
+@property (strong, nonatomic) IBOutlet UIButton *scanBLEbtn;
+@property (strong, nonatomic) IBOutlet UITableView *BLEdevicesList;
+
 
 @end
 

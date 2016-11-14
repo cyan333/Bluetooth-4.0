@@ -20,12 +20,82 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jev-7V-Ucy">
+                                <rect key="frame" x="44" y="95" width="286" height="363"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iwh-3u-Kti">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="363"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-hk-Ur0">
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="363"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="363" id="l7h-X1-Z7S"/>
+                                    <constraint firstAttribute="width" constant="286" id="nDv-ZL-LEC"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmp-kf-vAf">
+                                <rect key="frame" x="86" y="556" width="203" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tVA-Qx-xHB"/>
+                                    <constraint firstAttribute="width" constant="203" id="yhm-20-DFg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Continute without connection">
+                                    <color key="titleColor" red="0.087183870375156403" green="0.029334580525755882" blue="0.099548615515232086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continuteWithoutConnection" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wse-1X-Df1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5h-xs-3ag">
+                                <rect key="frame" x="73" y="507" width="228" height="41"/>
+                                <color key="backgroundColor" red="0.0" green="0.67362743616104126" blue="0.94819802045822144" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="ANl-kM-KoV"/>
+                                    <constraint firstAttribute="width" constant="228" id="jhF-sE-Hcj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <state key="normal" title="扫描蓝牙设备">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Devices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIS-Gv-2Yo">
+                                <rect key="frame" x="97" y="55" width="181" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="fa6-va-J0R"/>
+                                    <constraint firstAttribute="height" constant="21" id="vbb-jV-YGW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i5h-xs-3ag" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4ie-w3-oZk"/>
+                            <constraint firstItem="hIS-Gv-2Yo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bet-ek-zcP"/>
+                            <constraint firstItem="hIS-Gv-2Yo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-268" id="Kh6-aS-Ebf"/>
+                            <constraint firstItem="i5h-xs-3ag" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="194" id="LOX-nU-shE"/>
+                            <constraint firstItem="Jev-7V-Ucy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LWI-oP-4oa"/>
+                            <constraint firstItem="vmp-kf-vAf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="237.5" id="X1b-Db-ZjT"/>
+                            <constraint firstItem="Jev-7V-Ucy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-57" id="Xrp-UQ-mSZ"/>
+                            <constraint firstItem="vmp-kf-vAf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ezd-Lb-rWZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="BLEdevicesList" destination="1ey-hk-Ur0" id="urQ-nu-Og6"/>
+                        <outlet property="scanBLEbtn" destination="i5h-xs-3ag" id="Vrv-uf-Pmj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="17"/>
+            <point key="canvasLocation" x="21.600000000000001" y="16.641679160419791"/>
         </scene>
     </scenes>
 </document>
