@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		91101BF51DD8120400CD702C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91101BF41DD8120400CD702C /* main.m */; };
 		91101BF81DD8120400CD702C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91101BF71DD8120400CD702C /* AppDelegate.m */; };
-		91101BFB1DD8120400CD702C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91101BFA1DD8120400CD702C /* ViewController.m */; };
+		91101BFB1DD8120400CD702C /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91101BFA1DD8120400CD702C /* ScanViewController.m */; };
 		91101BFE1DD8120400CD702C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91101BFC1DD8120400CD702C /* Main.storyboard */; };
 		91101C001DD8120400CD702C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91101BFF1DD8120400CD702C /* Assets.xcassets */; };
 		91101C031DD8120400CD702C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91101C011DD8120400CD702C /* LaunchScreen.storyboard */; };
@@ -22,8 +22,8 @@
 		91101BF41DD8120400CD702C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		91101BF61DD8120400CD702C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		91101BF71DD8120400CD702C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		91101BF91DD8120400CD702C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		91101BFA1DD8120400CD702C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		91101BF91DD8120400CD702C /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		91101BFA1DD8120400CD702C /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		91101BFD1DD8120400CD702C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		91101BFF1DD8120400CD702C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91101C021DD8120400CD702C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 				91101BF71DD8120400CD702C /* AppDelegate.m */,
 				91101C0E1DD8C4D400CD702C /* BLEsdk.h */,
 				91101C0F1DD8C4D400CD702C /* BLEsdk.m */,
-				91101BF91DD8120400CD702C /* ViewController.h */,
-				91101BFA1DD8120400CD702C /* ViewController.m */,
+				91101BF91DD8120400CD702C /* ScanViewController.h */,
+				91101BFA1DD8120400CD702C /* ScanViewController.m */,
 				91101BFC1DD8120400CD702C /* Main.storyboard */,
 				91101BFF1DD8120400CD702C /* Assets.xcassets */,
 				91101C011DD8120400CD702C /* LaunchScreen.storyboard */,
@@ -163,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91101BFB1DD8120400CD702C /* ViewController.m in Sources */,
+				91101BFB1DD8120400CD702C /* ScanViewController.m in Sources */,
 				91101BF81DD8120400CD702C /* AppDelegate.m in Sources */,
 				91101C101DD8C4D400CD702C /* BLEsdk.m in Sources */,
 				91101BF51DD8120400CD702C /* main.m in Sources */,
@@ -328,6 +328,7 @@
 				91101C091DD8120400CD702C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

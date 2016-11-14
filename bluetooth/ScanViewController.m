@@ -6,13 +6,13 @@
 //  Copyright © 2016 fangming. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ScanViewController.h"
 
-@interface ViewController ()
+@interface ScanViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

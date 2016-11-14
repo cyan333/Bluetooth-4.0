@@ -10,7 +10,7 @@
 #import "BLE.h"
 #import "BLEsdk.h"
 
-@interface ViewController : UIViewController
+@interface ScanViewController : UIViewController
 
 //@property(nonatomic, strong) BLE *bluetoothmanager;
 @property(nonatomic, strong) BLEsdk *bluetoothmanager;
