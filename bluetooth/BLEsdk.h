@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #if TARGET_OS_IPHONE
 #import <CoreBluetooth/CoreBluetooth.h>
 #else
@@ -24,7 +25,6 @@
 @property (strong, nonatomic) NSMutableArray *peripherals;
 @property (strong, nonatomic) NSMutableArray *peripheralsNames;
 @property (strong, nonatomic) CBPeripheral *connectedPeripheral;
-
 
 /**
  Initial bluetooth Service. Must include at the beginning of your code. 

@@ -46,7 +46,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *simpleTableIdentifier = @"scanResultCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
@@ -58,6 +58,10 @@
     return cell;
 }
 
+- (void) test {
+    NSLog(@"appdalegate success ");
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 50;
@@ -65,12 +69,14 @@
 
 //updata table every 1s.
 - (void) updateTable
-{
+{   //use timer to updata list, might change later. 
     self.timeoutCounter++;
-    if (self.timeoutCounter >= 12) {
+    if (self.timeoutCounter >= 21) {
         [self.checkBLETimer invalidate];
         self.checkBLETimer = [[NSTimer alloc] init];
         self.timeoutCounter = 0;
+        [self.scanBLEbtn setTitle:@"扫描蓝牙设备" forState:UIControlStateNormal];
+        [self.scanBLEbtn setEnabled:YES];
     }
     self.deviceSearchResults = self.bluetoothmanager.peripheralsNames;
     [self.BLEdevicesList reloadData];
@@ -88,8 +94,11 @@
 
 #pragma mark - Bluetooth connection -
 - (IBAction)scanbuttom {
+    [self.scanBLEbtn setBackgroundColor: [UIColor colorWithRed:0.11 green:0.68 blue:0.94 alpha:1.0]];
+    [self.scanBLEbtn setTitle:@"扫描中..." forState:UIControlStateNormal];
+    [self.scanBLEbtn setEnabled:NO];
     [self.bluetoothmanager findBLEPeripherals:10];
-    self.checkBLETimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+    self.checkBLETimer = [NSTimer scheduledTimerWithTimeInterval:0.5
                                                           target:self
                                                         selector:@selector(updateTable)
                                                         userInfo:nil
@@ -98,7 +107,17 @@
     NSLog(@"success");
 }
 
+- (IBAction) scanButtonPress
+{
+    [self.scanBLEbtn setBackgroundColor:[UIColor colorWithRed:0.14 green:0.58 blue:0.78 alpha:1.0]];
+    NSLog(@"press");
+}
 
+- (IBAction) scanButtonRelease
+{
+    [self.scanBLEbtn setBackgroundColor: [UIColor colorWithRed:0.11 green:0.68 blue:0.94 alpha:1.0]];
+    NSLog(@"release");
+}
 
 
 - (IBAction)connectbluetooth {
@@ -130,10 +149,21 @@
     [self.bluetoothmanager write:ledonoff];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Prepare Segue - 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"noBLEConnectionSegue"])
+    {
+        
+    }
+    
+    if ([[segue identifier] isEqualToString:@"BLEConectionSegue"])
+    {
+        
+    }
 }
+
+
 
 
 @end

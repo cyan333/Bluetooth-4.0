@@ -23,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *scanBLEbtn;
 @property (strong, nonatomic) IBOutlet UITableView *BLEdevicesList;
 
+- (void) test;
 
 @end
 

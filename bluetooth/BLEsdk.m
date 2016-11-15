@@ -7,7 +7,7 @@
 //
 
 #import "BLEsdk.h"
-
+#import "AppDelegate.h"
 
 
 @implementation BLEsdk
@@ -93,27 +93,23 @@
     }
     else
     {
-        if (peripheral.name != nil) {
+        if (peripheral.name != nil && peripheral.identifier != nil) {
+
             for(int i = 0; i < self.peripherals.count; i++)
             {
                 CBPeripheral *p = [self.peripherals objectAtIndex:i];
-                
-                if ((p.identifier == NULL) || (peripheral.identifier == NULL))
-                    continue;
-                
+                //check if identifier (ID) repeated. if repeat, return, if not, add to the array.
                 if ([p.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString])
                 {
-                    [self.peripherals replaceObjectAtIndex:i withObject:peripheral];
-                    [self.peripheralsNames replaceObjectAtIndex:i withObject:peripheral.name];
-                    
                     NSLog(@"Duplicate UUID found updating...");
                     return;
                 }
             }
-            
+
             [self.peripherals addObject:peripheral];
             [self.peripheralsNames addObject:peripheral.name];
-            
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            [appDelegate notifyScanController: self.peripheralsNames];
             
             NSLog(@"%@",[peripheral identifier]);
         }
