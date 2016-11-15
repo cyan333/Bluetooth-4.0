@@ -132,7 +132,7 @@
 - (void)centralManager:(CBCentralManager *)central
   didConnectPeripheral:(CBPeripheral *)peripheral
 {
-    if (peripheral.identifier != NULL)
+    if (peripheral.identifier != nil)
         NSLog(@"Connected to %@ successful", peripheral.identifier.UUIDString);
     else
         NSLog(@"Connected to NULL successful");

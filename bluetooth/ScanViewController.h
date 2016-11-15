@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BLE.h"
 #import "BLEsdk.h"
+#import "TabBarViewController.h"
 
 @interface ScanViewController : UIViewController <UITableViewDelegate , UITableViewDataSource>
     

@@ -15,6 +15,8 @@
 		91101C031DD8120400CD702C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91101C011DD8120400CD702C /* LaunchScreen.storyboard */; };
 		91101C0C1DD81CFC00CD702C /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 91101C0B1DD81CFC00CD702C /* BLE.m */; };
 		91101C101DD8C4D400CD702C /* BLEsdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 91101C0F1DD8C4D400CD702C /* BLEsdk.m */; };
+		91A0A6711DDAAC0E0018544C /* Tab1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0A6701DDAAC0E0018544C /* Tab1ViewController.m */; };
+		91A0A6741DDAB0DE0018544C /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A0A6731DDAB0DE0018544C /* TabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		91101C0D1DD81D1800CD702C /* BLEDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
 		91101C0E1DD8C4D400CD702C /* BLEsdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEsdk.h; sourceTree = "<group>"; };
 		91101C0F1DD8C4D400CD702C /* BLEsdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEsdk.m; sourceTree = "<group>"; };
+		91A0A66F1DDAAC0E0018544C /* Tab1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab1ViewController.h; sourceTree = "<group>"; };
+		91A0A6701DDAAC0E0018544C /* Tab1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab1ViewController.m; sourceTree = "<group>"; };
+		91A0A6721DDAB0DE0018544C /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		91A0A6731DDAB0DE0018544C /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,10 @@
 				91101C0F1DD8C4D400CD702C /* BLEsdk.m */,
 				91101BF91DD8120400CD702C /* ScanViewController.h */,
 				91101BFA1DD8120400CD702C /* ScanViewController.m */,
+				91A0A6721DDAB0DE0018544C /* TabBarViewController.h */,
+				91A0A6731DDAB0DE0018544C /* TabBarViewController.m */,
+				91A0A66F1DDAAC0E0018544C /* Tab1ViewController.h */,
+				91A0A6701DDAAC0E0018544C /* Tab1ViewController.m */,
 				91101BFC1DD8120400CD702C /* Main.storyboard */,
 				91101BFF1DD8120400CD702C /* Assets.xcassets */,
 				91101C011DD8120400CD702C /* LaunchScreen.storyboard */,
@@ -163,7 +173,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A0A6711DDAAC0E0018544C /* Tab1ViewController.m in Sources */,
 				91101BFB1DD8120400CD702C /* ScanViewController.m in Sources */,
+				91A0A6741DDAB0DE0018544C /* TabBarViewController.m in Sources */,
 				91101BF81DD8120400CD702C /* AppDelegate.m in Sources */,
 				91101C101DD8C4D400CD702C /* BLEsdk.m in Sources */,
 				91101BF51DD8120400CD702C /* main.m in Sources */,

@@ -31,7 +31,7 @@
     self.bluetoothmanager = [[BLEsdk alloc] init];
     [self.bluetoothmanager initBluetoothService];
     
-    _toggle = 0;
+    self.toggle = 0;
     
 //    [self.bluetoothmanager findBLEPeripherals:50];
     
@@ -136,14 +136,14 @@
 - (IBAction)writedata {
     NSData *ledonoff;
     
-    if(_toggle == 0){
+    if(self.toggle == 0){
         NSString *on = @"1";
         ledonoff = [on dataUsingEncoding:NSUTF8StringEncoding];
-        _toggle = 1;
+        self.toggle = 1;
     }else{
         NSString *off = @"0";
         ledonoff = [off dataUsingEncoding:NSUTF8StringEncoding];
-        _toggle = 0;
+        self.toggle = 0;
     }
     
     [self.bluetoothmanager write:ledonoff];
@@ -159,7 +159,15 @@
     
     if ([[segue identifier] isEqualToString:@"BLEConectionSegue"])
     {
-        
+        for (int i = 0; i < self.bluetoothmanager.peripherals.count; i++) {
+            CBPeripheral *p = [self.bluetoothmanager.peripherals objectAtIndex:i];
+            
+            if ([p.name isEqualToString: @"HMSoft"]){
+                [self.bluetoothmanager connectPeripheral: p];
+            }
+        }
+        TabBarViewController *destinationViewController = segue.destinationViewController;
+        destinationViewController.bluetoothmanager = self.bluetoothmanager;
     }
 }
 
